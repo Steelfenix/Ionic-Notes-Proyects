@@ -1,9 +1,9 @@
-<ion-card (click)="clicked()">
+<ion-card (click)="clicked()" class="card-limit">
   <ion-card-header>
     <ion-card-title>{{ note.title }}</ion-card-title>
     <ion-card-subtitle>{{ note.creationDate }}</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
-    {{ note.content }}
+    <p [innerHtml]="note.content"></p>
   </ion-card-content>
 </ion-card>

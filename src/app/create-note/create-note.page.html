@@ -11,14 +11,26 @@
 </ion-header>
 
 <ion-content class="background" padding>
-  <ion-input [(ngModel)]="title" class="title" placeholder="Title"></ion-input>
-  <ion-textarea
-    [(ngModel)]="content"
-    maxlength="180"
-    class="content"
-    type="text"
-    placeholder="Note Content..."
-  ></ion-textarea>
+  <form #form="ngForm" style="width: 100%; height: 100%;">
+    <ion-input
+      name="title"
+      #inputTitle="ngModel"
+      [(ngModel)]="title"
+      class="title"
+      placeholder="Title"
+    ></ion-input>
+    <ion-textarea
+      name="noteContent"
+      #inputTextarea="ngModel"
+      [(ngModel)]="content"
+      maxlength="180"
+      class="content"
+      rows="33"
+      cols="20"
+      type="text"
+      placeholder="Note Content..."
+    ></ion-textarea>
+  </form>
 </ion-content>
 
 <ion-footer>
