@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-icon
+      slot="start"
+      routerLink="/home"
+      routerDirection="backward"
+      name="arrow-back"
+    ></ion-icon>
+    <ion-title>Add Note</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" padding>
+  <ion-input [(ngModel)]="title" class="title" placeholder="Title"></ion-input>
+  <ion-textarea
+    [(ngModel)]="content"
+    maxlength="180"
+    class="content"
+    type="text"
+    placeholder="Note Content..."
+  ></ion-textarea>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button
+      class="button-add"
+      slot="start"
+      fill="clear"
+      (click)="submitNote()"
+      ><ion-icon name="add"></ion-icon
+    ></ion-button>
+    <div class="char-count" slot="end">{{ content.length }}/180</div>
+  </ion-toolbar>
+</ion-footer>

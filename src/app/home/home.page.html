@@ -1,14 +1,28 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="warning">
     <ion-title>
-      Ionic Blank
+      Note Keeper
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+  <ion-list lines="none">
+    <ion-item *ngFor="let note of noteList">
+      <app-note-card [note]="note" (getId)="updateNote($event)"></app-note-card>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+<ion-footer
+  class="footer-size"
+  routerLink="create-note"
+  routerDirection="forward"
+  routerLinkActive="router-link-active"
+>
+  <ion-toolbar>
+    <label class="add-new-note">
+      Add new Note...
+    </label>
+  </ion-toolbar>
+</ion-footer>
